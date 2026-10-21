@@ -36,3 +36,9 @@ Browse applications and scenarios, inspect conversations, collections, analytics
 [Documentation](https://mcp.scenaro.io/docs) · [Support](https://mcp.scenaro.io/support) · [Privacy](https://mcp.scenaro.io/privacy) · [Terms](https://mcp.scenaro.io/terms)
 
 This repository contains plugin metadata and static assets only. It contains no credentials, user data or server implementation. Marketplace listings remain subject to each vendor’s review.
+
+## Packaging and releases
+
+GitHub Actions validates all three plugin manifests on every push and pull request, then uploads the ZIPs as workflow artifacts. To prepare a version, keep `server.json` and all three `plugin.json` versions aligned, commit the changes, then push a matching `v<version>` tag. The workflow creates a draft GitHub release containing the three ZIPs. Directory submission and publisher terms remain separate manual steps.
+
+The private server repository owns the runtime and Terraform deployment. This public repository only packages metadata; it does not deploy AWS resources or publish to vendor directories.
