@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "scenaro": {
+      "type": "http",
+      "url": "https://mcp.scenaro.io/mcp"
+    }
+  }
+}
