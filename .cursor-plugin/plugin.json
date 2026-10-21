@@ -1,0 +1,18 @@
+{
+  "name": "scenaro",
+  "version": "0.2.0",
+  "description": "Scenaro command line and MCP server for coding agents",
+  "author": {
+    "name": "Scenaro",
+    "email": "hello@scenaro.io",
+    "url": "https://scenaro.io"
+  },
+  "homepage": "https://mcp.scenaro.io/docs",
+  "keywords": [
+    "voice",
+    "scenaro",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json",
+  "logo": "./assets/icon-light.svg"
+}

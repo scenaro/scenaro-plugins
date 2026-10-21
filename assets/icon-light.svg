@@ -1,0 +1,9 @@
+<svg width="96" height="96" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none" role="img" aria-label="Scenaro">
+  <defs>
+    <linearGradient id="scenaro-ring-ink" x1="32" y1="18" x2="4" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a1820" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#1a1820" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#scenaro-ring-ink)" fill-rule="evenodd" clip-rule="evenodd" d="M18 4a14 14 0 1 1 0 28 14 14 0 0 1 0-28Zm0 4.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19Z"/>
+</svg>
