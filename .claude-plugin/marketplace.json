@@ -1,0 +1,18 @@
+{
+  "name": "scenaro",
+  "description": "Scenaro voice experiences for coding agents.",
+  "owner": {
+    "name": "Scenaro",
+    "email": "hello@scenaro.io",
+    "url": "https://scenaro.io"
+  },
+  "plugins": [
+    {
+      "name": "scenaro",
+      "source": "./",
+      "description": "Inspect and manage Scenaro voice experiences from a coding agent.",
+      "version": "0.3.0",
+      "category": "Developer Tools"
+    }
+  ]
+}

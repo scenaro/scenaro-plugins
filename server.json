@@ -3,7 +3,7 @@
   "name": "io.scenaro/mcp",
   "title": "Scenaro",
   "description": "Inspect and manage Scenaro voice experiences with company-scoped OAuth.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "remotes": [
     {
       "type": "streamable-http",

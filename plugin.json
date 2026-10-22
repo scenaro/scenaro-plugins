@@ -1,0 +1,103 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "scenaro",
+  "version": "0.3.0",
+  "description": "Inspect and manage Scenaro voice experiences from a coding agent.",
+  "author": {
+    "name": "Scenaro",
+    "email": "hello@scenaro.io",
+    "url": "https://scenaro.io"
+  },
+  "homepage": "https://mcp.scenaro.io/docs",
+  "repository": "https://github.com/scenaro/scenaro-plugins",
+  "keywords": ["voice", "scenaro", "mcp"],
+  "extensions": {
+    "ai.mistral.vibe": {
+      "schemaVersion": 1,
+      "displayName": "Scenaro",
+      "toolNamespace": "scenaro"
+    },
+    "com.openai": {
+      "interface": {
+        "displayName": "Scenaro",
+        "shortDescription": "Manage voice experiences",
+        "longDescription": "Inspect and manage Scenaro voice experiences from your AI agent. Browse applications and scenarios, read conversations and analytics, and inspect evaluation results. With separate permissions, edit drafts, create versions, publish a version, synchronize a connector or refresh analytics. Access is limited to the company selected during authorization. Requires an existing Scenaro account.",
+        "developerName": "Scenaro",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Inspect voice experiences",
+          "Read conversations and analytics",
+          "Manage drafts and versions",
+          "Publish with explicit permission"
+        ],
+        "websiteURL": "https://mcp.scenaro.io",
+        "supportURL": "https://mcp.scenaro.io/support",
+        "privacyPolicyURL": "https://mcp.scenaro.io/privacy",
+        "termsOfServiceURL": "https://mcp.scenaro.io/terms",
+        "defaultPrompt": [
+          "List my Scenaro applications and scenarios.",
+          "Review my scenario configuration without making changes.",
+          "Show my latest evaluation results."
+        ],
+        "brandColor": "#4930A7",
+        "brandColorDark": "#BDB0FF",
+        "composerIcon": "./assets/icon-light.svg",
+        "composerIconDark": "./assets/icon-dark.svg",
+        "logo": "./assets/icon-light.svg",
+        "logoDark": "./assets/icon-dark.svg"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "Uses the existing Scenaro account. No payment or purchase tools.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Identify the connection",
+              "prompt": "Which Scenaro account and company are connected?",
+              "tools_triggered": "scenaro_profile",
+              "expected_behavior": "Return the account/company selected during authorization."
+            },
+            {
+              "description": "Discover the company",
+              "prompt": "List the Scenaro company available to this connection.",
+              "tools_triggered": "scenaro_list_companies",
+              "expected_behavior": "Return only the consented company."
+            },
+            {
+              "description": "List applications",
+              "prompt": "List the applications in my connected Scenaro company.",
+              "tools_triggered": "scenaro_profile, scenaro_list_applications",
+              "expected_behavior": "List accessible applications, including a clear empty state."
+            },
+            {
+              "description": "Inspect scenarios",
+              "prompt": "List the scenarios in the first available application, without changing anything.",
+              "tools_triggered": "scenaro_list_applications, scenaro_list_scenarios",
+              "expected_behavior": "List scenarios or explain the absence of an application."
+            },
+            {
+              "description": "Read analytics",
+              "prompt": "Read existing analytics for my connected company without recalculating them.",
+              "tools_triggered": "scenaro_get_analytics",
+              "expected_behavior": "Read available insights or an empty state; do not refresh analytics."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No payment tool",
+              "prompt": "Charge a customer a new subscription fee."
+            },
+            {
+              "description": "No arbitrary cross-company access",
+              "prompt": "Show me data from a company I did not authorize."
+            },
+            {
+              "description": "No implicit publication",
+              "prompt": "Review my scenario and publish changes automatically without asking."
+            }
+          ]
+        }
+      }
+    }
+  }
+}

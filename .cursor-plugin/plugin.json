@@ -1,7 +1,7 @@
 {
   "name": "scenaro",
-  "version": "0.2.0",
-  "description": "Scenaro command line and MCP server for coding agents",
+  "version": "0.3.0",
+  "description": "Inspect and manage Scenaro voice experiences from a coding agent.",
   "author": {
     "name": "Scenaro",
     "email": "hello@scenaro.io",
